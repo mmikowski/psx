@@ -1,0 +1,33 @@
+#!/bin/bash
+
+## See style-guide
+## https://google.github.io/styleguide/shell.xml#Function_Names
+## http://www.davidpashley.com/articles/writing-robust-shell-scripts.html
+
+## The -u option forces bash to exit when encountering an uninit variable.
+## The -e option forces bash to exit when encountering a non-zero exit status.
+##   We omit -e as we do our own checking.
+
+set -u;
+_app_name=$( basename $0 );
+_app_link=$( readlink -f -- "${0}" );
+_bin_dir=$( cd "${_app_link%/*}" && echo "${PWD}" );
+_makedoc_exe="${_bin_dir}/make_doc";
+
+## == BEGIN Process changed documents =====================================
+if [ ! -x "${_makedoc_exe}" ]; then
+  echo "bin/make_doc not found.  This file should exist.";
+  echo "Please check your installation.";
+  exit 1;
+fi
+echo "Updating HTML documents from MarkDown";
+"${_makedoc_exe}";
+_exit_code=$?;
+if [ "${_exit_code}" -ne "0" ]; then
+  echo "Document file failure".
+  echo "Please check your installation.";
+  exit "${_exit_code}";
+fi
+## == . END Process changed documents =====================================
+
+exec ${_bin_dir}/xhi dev_commit && exit 1;
