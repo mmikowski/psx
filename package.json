@@ -841,9 +841,9 @@
               false
             ],
             [
-              "img/hi_score.png",
+              "img/bunnies",
               null,
-              false
+              true
             ],
             [
               "sound",

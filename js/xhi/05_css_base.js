@@ -476,7 +476,7 @@ xhi._05_css_base_ = (function () {
           },
           { _selector_str_ : __p('button.{_p_}-_x_inline_'),
             _rule_map_     : {
-              _display_ : '_inline_block_',
+              _display_ : '_inline_block_'
             }
           },
           { _selector_str_ : __p('button.{_p_}-_x_alt_'),
