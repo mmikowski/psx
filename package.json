@@ -692,7 +692,7 @@
                 "xhi_js_list"
               ]
             },
-            "js/ex01-08_app-build.js"
+            "js/ex01.08_app-build.js"
           ],
           "do_vendor": true
         },
@@ -728,7 +728,7 @@
                 "xhi_js_list"
               ]
             },
-            "js/ex02-08_app-build.js"
+            "js/ex02.08_app-build.js"
           ],
           "do_vendor": true
         },
@@ -787,6 +787,56 @@
             },
             [
               "template/app-tb02.html",
+              "/",
+              false
+            ],
+            [
+              "img/hi_score.png",
+              null,
+              false
+            ],
+            [
+              "sound",
+              null,
+              true
+            ]
+          ]
+        }
+      },
+      {
+        "app_id": "app-psx",
+        "css_make_matrix": {
+          "do_vendor": true
+        },
+        "js_make_matrix": {
+          "asset_list": [
+            {
+              "bundle_key_list": [
+                "xhi_js_list"
+              ]
+            },
+            "js/psx.00_root.js",
+            "js/psx.01_util.js",
+            "js/psx.02_data.js",
+            "js/psx.03_model.js",
+            "js/psx.05_css_base.js",
+            "js/psx.05_css_lb.js",
+            "js/psx.06_css.js",
+            "js/psx.06_lb.js",
+            "js/psx.07_shell.js",
+            "js/psx.08_app-build.js"
+          ],
+          "do_vendor": true
+        },
+        "path_copy_matrix": {
+          "asset_list": [
+            {
+              "bundle_key_list": [
+                "font_deploy_list"
+              ]
+            },
+            [
+              "template/app-psx.html",
               "/",
               false
             ],
